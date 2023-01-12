@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:registroponto/pages/loding_page.dart';
+import 'pages/login_page.dart';
+
 
 class SplashScreen extends StatefulWidget {
 

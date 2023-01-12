@@ -12,9 +12,7 @@ class _RegistroPageState extends State<RegistroPage> {
   final dataAtual = DateTime.now();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Registros'),),
-      body: Padding(
+    return Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,7 +24,7 @@ class _RegistroPageState extends State<RegistroPage> {
                 height: 120,
                 child: Card(
                   child:Center(
-                    child: Text('${dataAtual}'),
+                    child: Text('$dataAtual'),
                   ),
                 ),
               ),
@@ -36,25 +34,25 @@ class _RegistroPageState extends State<RegistroPage> {
               child: ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: ((context, index) {
-                  return ListTile(
+                  return const ListTile(
                     title: Text('Produtos'),
                     trailing: Icon(Icons.chevron_right),
                   );
                 }),
-                separatorBuilder: (__,_) => Divider(), 
+                separatorBuilder: (__,_) => const Divider(), 
                 itemCount: 50,),
             ),
             Expanded(
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: Text('Adicionar ponto'),
+                  child: const Text('Adicionar ponto'),
                   onPressed: () => registrar(),
                 ),
               ),
             ),
-          ],)
-      ),
+          ],
+        ),
     );
   }
   

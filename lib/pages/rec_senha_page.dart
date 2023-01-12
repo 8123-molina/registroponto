@@ -16,13 +16,11 @@ class _RecSenhaPageState extends State<RecSenhaPage> {
    Widget build(BuildContext context) {
        return Scaffold(
            appBar: AppBar(title: const Text('Recuperar senha'),),
-           body: Container(
-            child: Center(
-              child: ElevatedButton(child: Text('Home'),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (__) => const HomePage()));
-              },)
-            )
+           body: Center(
+             child: ElevatedButton(child: const Text('Home'),
+             onPressed: () {
+               Navigator.push(context, MaterialPageRoute(builder: (__) => const HomePage()));
+             },)
            ),
        );
   }

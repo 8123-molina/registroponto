@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:registroponto/pages/home_page.dart';
 import 'package:registroponto/pages/rec_senha_page.dart';
-import 'package:registroponto/splash_screen.dart';
 
+import '../commons/const/colors_const.dart';
 import '../components/button_components.dart';
+import 'index_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,14 +24,14 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget> [
                   Container(
                     decoration: const BoxDecoration(
-                      color: Colors.blue, 
-                      borderRadius: BorderRadius.only(bottomRight: Radius.circular(50)),
+                      color: corPrimary, 
+                      borderRadius: BorderRadius.only(bottomRight: Radius.circular(150)),
                     ),
                     height: 350,
                     width: double.infinity,  
                     child: const Icon(
-                      Icons.account_circle_sharp,
-                      color: Colors.white,
+                      Icons.bike_scooter,
+                      color: corSecundary,
                       size:160,
                     ),
                   ),
@@ -41,7 +41,8 @@ class _LoginPageState extends State<LoginPage> {
                       children: const <Widget> [
                         TextField(
                           decoration:InputDecoration(
-                            icon: Icon(Icons.person),
+                            fillColor: corPrimary,
+                            prefixIcon: Icon(Icons.person),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20)),
                             ),
@@ -51,7 +52,9 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: 16,),
                         TextField(
                           decoration:InputDecoration(
-                            icon: Icon(Icons.lock),
+                            fillColor: corPrimary,
+                            prefixIcon: Icon(Icons.lock),
+                            prefixIconColor: corSecundary,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20)),
                             ),
@@ -66,12 +69,12 @@ class _LoginPageState extends State<LoginPage> {
                     child: ElevatedButton(
                       style: raisedButtonStyle,
                       onPressed: () { 
-                        Navigator.push(context, MaterialPageRoute(builder:(__) => const HomePage()));
+                        Navigator.push(context, MaterialPageRoute(builder:(__) => const IndexPage()));
                       },
                       child: const Text('Login',
                         style:TextStyle(
                           fontSize: 24,
-                          color: Colors.white),
+                          color: corSecundary),
                       ),
                     ),
                   ),
@@ -81,7 +84,9 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (__) => const RecSenhaPage()));
                       },
-                      child: const Text('Recuperar senha'),),
+                      child: const Text('Recuperar senha',
+                        style: TextStyle(color: corPrimary),
+                        ),),
                   ),
                 ],
               ),
